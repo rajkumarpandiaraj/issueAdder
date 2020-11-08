@@ -27,16 +27,20 @@ export class Issueform extends Component {
             ...this.state,
             status : 'Not Opened',
             openedBy : '-',
-            date : new Date()
+            date : new Date(),
+            openedId : '', 
         }).then(()=>{
             console.log('Success')
         }).catch(err =>{
             console.log('err.message')
         })
 
-        // this.setState({
-        //     ...this.state
-        // })
+        this.setState({
+            issue : '',
+            name: '',
+            address : '',
+            mobile : '',
+        })
     }
     
     render() {
@@ -54,7 +58,7 @@ export class Issueform extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="address">Address</label>
-                    <input type="text" value={this.state.addres} onChange={this.handleChange} name='address' className="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter Address"/>
+                    <input type="text" value={this.state.address} onChange={this.handleChange} name='address' className="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter Address"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="mobile">Mobile.no</label>
